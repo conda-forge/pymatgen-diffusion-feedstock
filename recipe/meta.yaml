@@ -1,5 +1,5 @@
 {% set name = "pymatgen-diffusion" %}
-{% set version = "2019.2.28" %}
+{% set version = "2019.8.18" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9dfbf8c94ecbf54282e5eb17bb864b6ce7eec734fdb5a10078369410764f45d
+  sha256: c8ed6e9426abc06af66b51155f80b8fd29f3d6957ce4bd83ca34fb5005feda4f
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
