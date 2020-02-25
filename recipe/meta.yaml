@@ -30,6 +30,8 @@ test:
     - pymatgen_diffusion
     - pymatgen_diffusion.aimd
     - pymatgen_diffusion.neb
+  commands:
+    - pip check
 
 about:
   home: https://github.com/materialvirtuallab/pymatgen-diffusion/
