@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python
+    - pip
     - pymatgen >=2019.5.8
     - monty >=2.0.4
 
@@ -30,6 +31,8 @@ test:
     - pymatgen_diffusion
     - pymatgen_diffusion.aimd
     - pymatgen_diffusion.neb
+  commands:
+    - pip check
 
 about:
   home: https://github.com/materialvirtuallab/pymatgen-diffusion/
