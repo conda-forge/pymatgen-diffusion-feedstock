@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python
+    - pip
     - pymatgen >=2019.5.8
     - monty >=2.0.4
 
