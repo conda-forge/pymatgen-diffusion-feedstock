@@ -1,5 +1,5 @@
 {% set name = "pymatgen-diffusion" %}
-{% set version = "2019.8.18" %}
+{% set version = "2020.10.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c8ed6e9426abc06af66b51155f80b8fd29f3d6957ce4bd83ca34fb5005feda4f
+  sha256: bef2ba2de9a172ea3c44c0f32baafe4491937a6ad2588cec028114a5b002cdf3
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -39,7 +39,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'This add-on to pymatgen provides tools for analyzing diffusion in materials.'
+  summary: This add-on to pymatgen provides tools for analyzing diffusion in materials.
 
   description: |
     This is an add-on to pymatgen for diffusion analysis that is 
