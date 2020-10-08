@@ -5,9 +5,13 @@ Home: https://github.com/materialvirtuallab/pymatgen-diffusion/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pymatgen-diffusion-feedstock/blob/master/LICENSE.txt)
 
 Summary: This add-on to pymatgen provides tools for analyzing diffusion in materials.
+
+Development: https://github.com/materialvirtuallab/pymatgen-diffusion/
+
+Documentation: https://github.com/materialvirtuallab/pymatgen-diffusion/
 
 This is an add-on to pymatgen for diffusion analysis that is
 developed by the Materials Virtual Lab. Note that it relies on
