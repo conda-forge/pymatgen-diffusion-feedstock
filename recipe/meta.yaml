@@ -6,27 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: bef2ba2de9a172ea3c44c0f32baafe4491937a6ad2588cec028114a5b002cdf3
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - setuptools
   host:
-    - python
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - pip
     - pymatgen >=2019.5.8
     - monty >=2.0.4
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pymatgen_diffusion
     - pymatgen_diffusion.aimd
