@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  name: pymatgen-diffusion
+  version: "2020.10.8"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: bef2ba2de9a172ea3c44c0f32baafe4491937a6ad2588cec028114a5b002cdf3
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - setuptools
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - pip
+    - pymatgen >=2019.5.8
+    - monty >=2.0.4
+
+tests:
+  - python:
+      imports:
+        - pymatgen_diffusion
+        - pymatgen_diffusion.aimd
+        - pymatgen_diffusion.neb
+      pip_check: true
+
+      python_version: ${{ python_min }}.*
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: This add-on to pymatgen provides tools for analyzing diffusion in materials.
+  description: |
+    This is an add-on to pymatgen for diffusion analysis that is
+    developed by the Materials Virtual Lab. Note that it relies on
+    pymatgen for structural manipulations, file io, and preliminary
+    analyses. In particular, pymatgen's DiffusionAnalyzer is used
+    heavily. The purpose of this add-on is to provide other diffusion
+    analyses, using trajectories extracted using the DiffusionAnalyzer
+    class.
+  homepage: https://github.com/materialvirtuallab/pymatgen-diffusion/
+  repository: https://github.com/materialvirtuallab/pymatgen-diffusion/
+  documentation: https://github.com/materialvirtuallab/pymatgen-diffusion/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - shyuep
+    - mkhorton
